@@ -9,10 +9,12 @@ img {
   width: 200px;
   cursor: pointer;
   filter: blur(0px);
-  transition: 0.3s;
+  transition: all 0.3s;
+  background-color: transparent;
+  background-blend-mode: screen;
 }
 
 img:hover {
   filter: blur(1px);
-  transition: 0.3s;
+  background-color: white;
 }
