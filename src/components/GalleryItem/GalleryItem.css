@@ -7,4 +7,12 @@
 
 img {
   width: 200px;
+  cursor: pointer;
+  filter: blur(0px);
+  transition: 0.3s;
+}
+
+img:hover {
+  filter: blur(1px);
+  transition: 0.3s;
 }
