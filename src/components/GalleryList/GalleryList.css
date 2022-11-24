@@ -1,11 +1,8 @@
 .gallery-list {
-  /* margin: 0 20%; */
+  margin: 0 80px;
+  text-align: center;
   display: flex;
   flex-direction: row;
+  justify-content: safe center;
   flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.flex-child {
-  display: flex;
 }
