@@ -1,0 +1,7 @@
+.gallery-item {
+  border: 1px solid gray;
+}
+
+img {
+  width: 250px;
+}
