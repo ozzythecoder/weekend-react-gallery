@@ -28,9 +28,11 @@ export default function GalleryList() {
         <GalleryItem
           className="flex-child"
           key={item.id}
+          imgId={item.id}
           path={item.path}
           description={item.description}
-          likes={item.likes} />
+          likes={item.likes}
+          getList={getList} />
       )
     })
 

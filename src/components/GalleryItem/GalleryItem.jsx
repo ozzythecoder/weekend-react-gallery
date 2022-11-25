@@ -1,18 +1,30 @@
+import Axios from 'axios';
 import { useState } from 'react';
+
 import './GalleryItem.css'
 
-export default function GalleryItem({path, description, likes}) {
+export default function GalleryItem({imgId, path, description, likes, getList}) {
 
   const [ showDescription, setShowDesc ] = useState(false);
   const [ liked, setLike ] = useState(false);
 
   const toggleDescription = () => {
     setShowDesc(!showDescription)
-    console.log('in toggleDesc');
   }
 
   const handleLike = () => {
-    setLike(!liked)
+    console.log('in handleLike with imgId', imgId);
+    if (liked) return;
+    Axios.put('/gallery/like/' + imgId)
+      .then(res => {
+        console.log('liked successfully');
+        getList();
+        setLike(true);
+      })
+      .catch(err => {
+        console.log('error in axios.put:', err);
+      })
+
   }
 
   return (
