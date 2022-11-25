@@ -1,9 +1,12 @@
 .gallery-item {
   position: relative;
-  border: 1px solid gray;
   width: fit-content;
-  padding: 10px 10px 70px 10px;
+  height: 260px;
+  padding: 10px;
   margin: 5px 5px;
+  border: 1px solid gray;
+  background-color: white;
+  filter: drop-shadow(2px 2px 2px rgb(0, 0, 0, 0.4));
 }
 
 .img-holder {
@@ -16,7 +19,7 @@ img {
   max-width: 100%;
   cursor: pointer;
   filter: none;
-  transition: all 0.3s;
+  transition: all 0.25s;
 }
 
 img:hover {
@@ -32,7 +35,7 @@ img:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all 0.3s;
+  transition: all 0.25s;
   cursor: pointer;
 }
 
