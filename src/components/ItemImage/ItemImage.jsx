@@ -7,13 +7,13 @@ export default function ItemImage({path, description}) {
   const toggleDescription = () => {
     setShowDesc(!showDescription)
   }
-  
+
   return (
     <div className="img-holder">
-      <img src={path} 
-        onClick={toggleDescription}
-        />
-      {!showDescription && <div className="show-desc-text">See Description</div>}
+      <img src={path} onClick={toggleDescription} />
+
+      {!showDescription && <div className="show-desc-text">Read More</div>}
+      
       {showDescription &&
         <div className="img-description">
           <span id="close-button"

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import ItemImage from '../ItemImage/ItemImage';
 import ItemLikes from '../ItemLikes/ItemLikes';
 import './GalleryItem.css'
