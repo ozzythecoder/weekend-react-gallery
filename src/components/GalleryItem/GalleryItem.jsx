@@ -3,17 +3,8 @@ import './GalleryItem.css'
 
 export default function GalleryItem({img}) {
 
-  const [ isHover, setIsHover ] = useState(false);
   const [ showDescription, setShowDesc ] = useState(false);
-  const [ liked, setLike ] = useState(false)
-      
-  const handleMouseOver = () => {
-    setIsHover(true)
-  }
-
-  const handleMouseOut = () => {
-    setIsHover(false)
-  }
+  const [ liked, setLike ] = useState(false);
 
   const toggleDescription = () => {
     setShowDesc(!showDescription)
@@ -29,13 +20,12 @@ export default function GalleryItem({img}) {
       <div className="img-holder">
         <img src={img} 
           onClick={toggleDescription}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
           />
         {!showDescription && <div className="show-desc-text">See Description</div>}
         {showDescription &&
           <div className="img-description">
-            <span className="close-button">&#x2715;</span>
+            <span id="close-button"
+              className="material-symbols-outlined">close</span>
             <span className="description-text">Description</span>
           </div>
         }
