@@ -25,7 +25,7 @@ export default function GalleryItem({img}) {
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           />
-        {isHover && <div className="show-desc-text">Show Description</div>}
+        <div className="show-desc-text">Show Description</div>
       </div>
     </div>
   )

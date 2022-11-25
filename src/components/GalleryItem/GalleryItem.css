@@ -25,11 +25,17 @@ img:hover {
 
 .show-desc-text {
   pointer-events: none;
+  user-select: none;
   position: absolute;
   color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
   cursor: pointer;
-  user-select: none;
+}
+
+img:hover ~ .show-desc-text {
+  opacity: 1;
 }
