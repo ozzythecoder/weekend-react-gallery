@@ -91,4 +91,5 @@ img:hover ~ .show-desc-text {
 
 .material-symbols-outlined.clicked {
   font-variation-settings: 'FILL' 1;
+  color: rgb(210, 0, 0)
 }

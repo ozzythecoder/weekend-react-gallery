@@ -32,12 +32,12 @@ export default function GalleryItem({img}) {
       </div>
       <div className="img-like-display">
         <div
-          className={`material-symbols-outlined ${liked ? 'clicked' : ''}`}
+          className={`material-symbols-outlined ${liked && 'clicked'}`}
           id="like-button"
           onClick={handleLike}>
           favorite
         </div>
-        <div>
+        <div className="like-count">
           10 likes
         </div>
       </div>
