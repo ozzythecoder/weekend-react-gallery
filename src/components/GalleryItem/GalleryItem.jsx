@@ -18,16 +18,14 @@ export default function GalleryItem({img}) {
   }
 
   return (
-    <div>
-      <div className="gallery-item">
-        <div className="img-holder">
-          <img src={img} 
-            onClick={toggleDescription}
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-            />
-          {isHover && <div className="show-desc-text">Show Description</div>}
-        </div>
+    <div className="gallery-item">
+      <div className="img-holder">
+        <img src={img} 
+          onClick={toggleDescription}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          />
+        {isHover && <div className="show-desc-text">Show Description</div>}
       </div>
     </div>
   )
