@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './GalleryItem.css'
 
-export default function GalleryItem({img}) {
+export default function GalleryItem({path, description, likes}) {
 
   const [ showDescription, setShowDesc ] = useState(false);
   const [ liked, setLike ] = useState(false);
@@ -18,7 +18,7 @@ export default function GalleryItem({img}) {
   return (
     <div className="gallery-item">
       <div className="img-holder">
-        <img src={img} 
+        <img src={path} 
           onClick={toggleDescription}
           />
         {!showDescription && <div className="show-desc-text">See Description</div>}
@@ -26,7 +26,7 @@ export default function GalleryItem({img}) {
           <div className="img-description">
             <span id="close-button"
               className="material-symbols-outlined">close</span>
-            <span className="description-text">Description</span>
+            <span className="description-text">{description}</span>
           </div>
         }
       </div>
@@ -38,7 +38,7 @@ export default function GalleryItem({img}) {
           favorite
         </div>
         <div className="like-count">
-          10 likes
+          {likes} like{likes !== 1 && 's'}
         </div>
       </div>
     </div>
