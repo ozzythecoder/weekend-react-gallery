@@ -5,6 +5,7 @@ export default function GalleryItem({img}) {
 
   const [ isHover, setIsHover ] = useState(false);
   const [ showDescription, setShowDesc ] = useState(false);
+  const [ liked, setLike ] = useState(false)
       
   const handleMouseOver = () => {
     setIsHover(true)
@@ -19,6 +20,10 @@ export default function GalleryItem({img}) {
     console.log('in toggleDesc');
   }
 
+  const handleLike = () => {
+    setLike(!liked)
+  }
+
   return (
     <div className="gallery-item">
       <div className="img-holder">
@@ -27,13 +32,24 @@ export default function GalleryItem({img}) {
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           />
-        {!showDescription && <div className="show-desc-text">Show Description</div>}
+        {!showDescription && <div className="show-desc-text">See Description</div>}
         {showDescription &&
-        <div className="img-description">
-          <span className="close-button">&#x2715;</span>
-          <span className="description-text">Description</span>
-        </div>
+          <div className="img-description">
+            <span className="close-button">&#x2715;</span>
+            <span className="description-text">Description</span>
+          </div>
         }
+      </div>
+      <div className="img-like-display">
+        <div
+          className={`material-symbols-outlined ${liked ? 'clicked' : ''}`}
+          id="like-button"
+          onClick={handleLike}>
+          favorite
+        </div>
+        <div>
+          10 likes
+        </div>
       </div>
     </div>
   )

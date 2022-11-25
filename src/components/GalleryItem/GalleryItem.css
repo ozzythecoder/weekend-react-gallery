@@ -67,3 +67,28 @@ img:hover ~ .show-desc-text {
   top: 10px;
   right: 10px;
 }
+
+.img-like-display {
+  padding-top: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#like-button {
+  cursor: pointer;
+  user-select: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+}
+
+.material-symbols-outlined.clicked {
+  font-variation-settings: 'FILL' 1;
+}
