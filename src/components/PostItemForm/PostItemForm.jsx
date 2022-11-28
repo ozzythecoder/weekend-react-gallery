@@ -62,9 +62,7 @@ export default function PostItemForm({getList}) {
       <button
         onClick={handleSubmit}>
           Add Post
-        </button><br />
-        <p>Img url: {imgUrlIn}</p>
-        <p>Img desc: {imgDescIn}</p>
+        </button>
       </form>
     </div>
   )

@@ -11,12 +11,14 @@
 
 .img-holder {
   position: relative;
-  width: 200px;
   transition: all 0.3s;
 }
 
 img {
   max-width: 100%;
+  min-height: 200px;
+  width: 200px;
+  object-fit: cover;
   cursor: pointer;
   filter: none;
   transition: all 0.25s;
