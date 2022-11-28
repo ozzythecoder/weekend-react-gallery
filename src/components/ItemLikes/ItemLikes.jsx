@@ -21,10 +21,16 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
 
   }
 
+  const handleDelete = () => {
+
+    console.log('in deletepost');
+  }
+
   return (
-    <div className="img-like-display">
+    <div>  
+      <div className="img-like-display">
         <div
-          className={`material-symbols-outlined ${liked && 'clicked'}`}
+          className={`btn material-symbols-outlined ${liked && 'clicked'}`}
           id="like-button"
           onClick={handleLike}>
           favorite
@@ -33,5 +39,12 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
           {likes} like{likes !== 1 && 's'}
         </div>
     </div>
+        <div
+          className="btn material-symbols-outlined"
+          id="delete-button"
+          onClick={handleDelete}>
+            delete
+        </div>
+  </div>
   )
 }

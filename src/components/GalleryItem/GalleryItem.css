@@ -80,7 +80,7 @@ img:hover ~ .show-desc-text {
   justify-content: space-between;
 }
 
-#like-button {
+.btn {
   cursor: pointer;
   user-select: none;
 }
