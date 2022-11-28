@@ -4,25 +4,11 @@ import { useEffect, useState } from "react"
 import GalleryItem from "../GalleryItem/GalleryItem"
 import './GalleryList.css'
 
-export default function GalleryList() {
+export default function GalleryList({getList, content}) {
 
   useEffect(() => {
     getList();
   }, [])
-
-  const [ content, setContent ] = useState([]);
-
-  const getList = () => {
-    Axios.get('/gallery')
-      .then(({data}) => {
-        console.log('got gallery items');
-        setContent(data);
-      })
-      .catch(err => {
-        console.log('error getting gallery items');
-        alert('Problem getting gallery items. Try again later')
-      })
-  }
 
   const galleryItems = content.map(item => {
       return (

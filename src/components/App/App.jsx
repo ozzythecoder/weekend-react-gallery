@@ -3,13 +3,13 @@ import './App.css';
 
 
 import Header from '../Header/Header';
-import GalleryList from '../GalleryList/GalleryList';
+import GalleryBody from '../GalleryBody/GalleryBody';
 
 function App() {
     return (
       <div className="App">
         <Header />
-        <GalleryList />
+        <GalleryBody />
 
       </div>
     );

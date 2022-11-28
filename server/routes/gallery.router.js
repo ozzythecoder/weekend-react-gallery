@@ -2,9 +2,28 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
-// const galleryItems = require('../modules/gallery.data');
+// POST route
+router.post('/', (req, res) => {
+  console.log(req.body);
+  const path = req.body.path;
+  const description = req.body.description
 
-// PUT Route - like picture
+  const queryText = `INSERT INTO react_gallery (path, description, likes)
+    VALUES ($1, $2, 0)`
+
+  pool.query(queryText, [path, description])
+    .then(dbRes => {
+      console.log('POSTed to database');
+      res.sendStatus(201);
+    })
+    .catch(err => {
+      console.error('router.post:', err);
+      res.sendStatus(500);
+    })
+
+})
+
+// PUT Route
 router.put('/like/', (req, res) => {
 
   const id = req.query.id;
