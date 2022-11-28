@@ -6,13 +6,12 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
   const [ liked, setLike ] = useState(user_liked);
 
   const handleLike = () => {
-    console.log('in handleLike with imgId', imgId);
 
     const request = `?id=${imgId}&user_liked=${liked}`
     
     Axios.put('/gallery/like/' + request)
       .then(res => {
-        console.log('liked successfully');
+        console.log('img with id', imgId, 'liked/unliked successfully');
         getList();
         setLike(!liked);
       })

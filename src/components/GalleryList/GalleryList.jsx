@@ -15,12 +15,12 @@ export default function GalleryList() {
   const getList = () => {
     Axios.get('/gallery')
       .then(({data}) => {
-        console.log('got gallery items:');
-        console.table(data);
+        console.log('got gallery items');
         setContent(data);
       })
       .catch(err => {
         console.log('error getting gallery items');
+        alert('Problem getting gallery items. Try again later')
       })
   }
 
