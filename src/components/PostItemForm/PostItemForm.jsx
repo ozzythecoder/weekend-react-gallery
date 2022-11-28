@@ -6,8 +6,35 @@ export default function PostItemForm() {
   const [ imgUrlIn, setImgUrl ] = useState('')
   const [ imgDescIn, setImgDesc ] = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    const postObj = {
+      path: imgUrlIn,
+      description: imgDescIn
+    }
+
+    if (!validateInput(postObj)) return;
+
+    Axios.post('/gallery', postObj)
+      .then(res => {
+        console.log('posted successfully');
+        // TODO - Prop drill axios get!!
+      })
+      .catch(err => {
+        console.error('error adding new post');
+        alert('Client error. Please try again later.')
+      })
+
     console.log('in handlesubmit');
+  }
+
+  const validateInput = (postObj) => {
+    if (Object.values(postObj).some(e => e == '')) {
+      alert('Inputs cannot be empty.')
+      return false;
+    }
+    return true;
   }
 
   return (
