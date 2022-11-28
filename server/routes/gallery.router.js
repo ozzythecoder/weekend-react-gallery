@@ -50,17 +50,33 @@ router.put('/like/', (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
-  let queryText = `SELECT * FROM react_gallery ORDER BY id`
+  const queryText = `SELECT * FROM react_gallery ORDER BY id`
 
   pool.query(queryText)
     .then(dbRes => {
-      console.log('got from server!');
+      console.log('got from database');
       res.send(dbRes.rows)
     })
     .catch(err => {
-      console.log('error in router.get:', err);
+      console.log('router.get:', err);
       res.sendStatus(500)
     })
 }); // END GET Route
+
+// DELETE Route
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
+  const queryText = `DELETE FROM react_gallery WHERE id = $1`
+
+  pool.query(queryText, [id])
+    .then(dbRes => {
+      console.log('deleted from database');
+      res.sendStatus(200);
+    })
+    .catch(err => {
+      console.log('router.delete:', err);
+      res.sendStatus(500);
+    })
+})
 
 module.exports = router;
