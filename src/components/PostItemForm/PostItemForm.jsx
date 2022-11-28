@@ -1,6 +1,8 @@
 import Axios from "axios";
 import { useState } from "react";
 
+import './PostItemForm.css'
+
 export default function PostItemForm({getList}) {
 
   const [ imgUrlIn, setImgUrl ] = useState('')
@@ -64,6 +66,7 @@ export default function PostItemForm({getList}) {
           Add Post
         </button>
       </form>
+      <div className="divider"></div>
     </div>
   )
 }

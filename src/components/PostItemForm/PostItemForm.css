@@ -1,0 +1,22 @@
+label {
+  font-size: 14px;
+}
+
+input {
+  display: block;
+  margin: 4px auto;
+  padding: 5px 3px;
+  width: 300px;
+}
+
+button {
+  height: 2em;
+  width: 100px;
+}
+
+.divider {
+  margin: 15px auto;
+  height: 1px;
+  width: 80%;
+  background: lightgray;
+}
