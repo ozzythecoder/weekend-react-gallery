@@ -31,7 +31,7 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
       <div className="img-like-display">
         <div
           className={`btn material-symbols-outlined ${liked && 'clicked'}`}
-          id="like-button"
+          id="like-btn"
           onClick={handleLike}>
           favorite
         </div>
@@ -41,7 +41,7 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
     </div>
         <div
           className="btn material-symbols-outlined"
-          id="delete-button"
+          id="delete-btn"
           onClick={handleDelete}>
             delete
         </div>
