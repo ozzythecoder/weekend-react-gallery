@@ -4,15 +4,21 @@ const pool = require('../modules/pool')
 
 // const galleryItems = require('../modules/gallery.data');
 
-// PUT Route
-router.put('/like/:id', (req, res) => {
-  console.log(req.params);
-  let id = req.params.id;
-  let queryText = `UPDATE react_gallery
-    SET user_liked = true, likes = likes + 1
-    WHERE id = $1;`
+// PUT Route - like picture
+router.put('/like/', (req, res) => {
 
-  pool.query(queryText, [id])
+  const id = req.query.id;
+  const setLike = (req.query.user_liked === 'true' ? false : true);
+  const likeQuery = (setLike) ? 'likes = likes + 1' : 'likes = likes - 1'
+
+  const queryText =
+    `UPDATE react_gallery
+    SET user_liked = $1, ${likeQuery}
+    WHERE id = $2;`
+
+    console.log(queryText);
+
+  pool.query(queryText, [setLike, id])
     .then(dbRes => {
       console.log('set image to liked with id', id);
       res.sendStatus(200);

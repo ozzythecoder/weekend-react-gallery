@@ -1,24 +1,24 @@
 import Axios from "axios";
 import { useState } from "react";
 
-export default function ItemLikes({imgId, likes, getList}) {
+export default function ItemLikes({imgId, likes, user_liked, getList}) {
 
-  const [ liked, setLike ] = useState(false);
+  const [ liked, setLike ] = useState(user_liked);
 
   const handleLike = () => {
     console.log('in handleLike with imgId', imgId);
-    
-    if (liked) return;
 
-    Axios.put('/gallery/like/' + imgId)
+    const request = `?id=${imgId}&user_liked=${liked}`
+    
+    Axios.put('/gallery/like/' + request)
       .then(res => {
         console.log('liked successfully');
         getList();
-        setLike(true);
+        setLike(!liked);
       })
-      .catch(err => {
+        .catch(err => {
         console.log('error in axios.put:', err);
-      })
+      })      
 
   }
 

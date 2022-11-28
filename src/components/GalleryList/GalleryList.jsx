@@ -33,6 +33,7 @@ export default function GalleryList() {
           path={item.path}
           description={item.description}
           likes={item.likes}
+          user_liked={item.user_liked}
           getList={getList} />
       )
     })
