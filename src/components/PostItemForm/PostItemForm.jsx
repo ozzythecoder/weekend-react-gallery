@@ -1,7 +1,7 @@
 import Axios from "axios";
 import { useState } from "react";
 
-export default function PostItemForm() {
+export default function PostItemForm({getList}) {
 
   const [ imgUrlIn, setImgUrl ] = useState('')
   const [ imgDescIn, setImgDesc ] = useState('')
@@ -19,7 +19,7 @@ export default function PostItemForm() {
     Axios.post('/gallery', postObj)
       .then(res => {
         console.log('posted successfully');
-        // TODO - Prop drill axios get!!
+        getList();
       })
       .catch(err => {
         console.error('error adding new post');
