@@ -14,9 +14,10 @@ export default function GalleryList() {
 
   const getList = () => {
     Axios.get('/gallery')
-      .then(res => {
-        console.log('got gallery items');
-        setContent(res.data);
+      .then(({data}) => {
+        console.log('got gallery items:');
+        console.table(data);
+        setContent(data);
       })
       .catch(err => {
         console.log('error getting gallery items');
@@ -32,6 +33,7 @@ export default function GalleryList() {
           path={item.path}
           description={item.description}
           likes={item.likes}
+          user_liked={item.user_liked}
           getList={getList} />
       )
     })
