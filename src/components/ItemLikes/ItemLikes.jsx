@@ -49,12 +49,12 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
           {likes} like{likes !== 1 && 's'}
         </div>
     </div>
-        <div
-          className="btn material-symbols-outlined"
-          id="delete-btn"
-          onClick={handleDelete}>
-            delete
-        </div>
+    <div
+      className="btn material-symbols-outlined"
+      id="delete-btn"
+      onClick={handleDelete}>
+        delete
+    </div>
   </div>
   )
 }

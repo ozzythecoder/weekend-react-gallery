@@ -83,6 +83,12 @@ img:hover ~ .show-desc-text {
 .btn {
   cursor: pointer;
   user-select: none;
+  color: rgb(0, 0, 0, 0.6)
+}
+
+.btn:hover {
+  font-variation-settings: 'wght' 400;
+  color: black;
 }
 
 #delete-btn {
@@ -91,6 +97,7 @@ img:hover ~ .show-desc-text {
 
 #delete-btn:active {
   font-variation-settings: 'FILL' 1;
+  color: black;
 }
 
 .material-symbols-outlined {
