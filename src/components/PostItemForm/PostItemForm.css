@@ -20,10 +20,3 @@ button:active {
   background: black;
   color: white;
 }
-
-.divider {
-  margin: 10px auto;
-  height: 1px;
-  width: 80%;
-  background: lightgray;
-}

@@ -6,10 +6,12 @@ import './GalleryList.css'
 
 export default function GalleryList({getList, content}) {
 
+  // Get list info on refresh
   useEffect(() => {
     getList();
   }, [])
 
+  // Loop over gallery and render components
   const galleryItems = content.map(item => {
       return (
         <GalleryItem
