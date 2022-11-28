@@ -10,12 +10,19 @@ input {
 }
 
 button {
+  margin: 5px;
   height: 2em;
   width: 100px;
+  cursor: pointer;
+}
+
+button:active {
+  background: black;
+  color: white;
 }
 
 .divider {
-  margin: 15px auto;
+  margin: 10px auto;
   height: 1px;
   width: 80%;
   background: lightgray;
