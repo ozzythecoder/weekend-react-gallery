@@ -15,7 +15,7 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
         getList();
         setLike(!liked);
       })
-        .catch(err => {
+      .catch(err => {
         console.log('error in axios.put:', err);
       })      
 
@@ -24,6 +24,16 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
   const handleDelete = () => {
 
     console.log('in deletepost');
+
+    Axios.delete('/gallery/' + imgId)
+      .then(res => {
+        console.log('image deleted successfully');
+        getList();
+      })
+      .catch(err => {
+        console.log('error in axios.delete:', err);
+        alert('Error deleting post. Try again later.')
+      })
   }
 
   return (
