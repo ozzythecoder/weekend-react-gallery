@@ -6,8 +6,10 @@ import PostItemForm from "../PostItemForm/PostItemForm";
 
 export default function GalleryBody() {
 
+  // State variable
   const [ content, setContent ] = useState([]);
 
+  // Get posts from database
   const getList = () => {
     Axios.get('/gallery')
       .then(({data}) => {
