@@ -21,6 +21,7 @@ export default function PostItemForm({getList}) {
     Axios.post('/gallery', postObj)
       .then(res => {
         console.log('posted successfully');
+        emptyInputs();
         getList();
       })
       .catch(err => {
@@ -37,6 +38,11 @@ export default function PostItemForm({getList}) {
       return false;
     }
     return true;
+  }
+
+  const emptyInputs = () => {
+    setImgUrl('');
+    setImgDesc('');
   }
 
   return (

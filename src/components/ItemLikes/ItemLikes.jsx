@@ -40,7 +40,7 @@ export default function ItemLikes({imgId, likes, user_liked, getList}) {
     <div>  
       <div className="img-like-display">
         <div
-          className={`btn material-symbols-outlined ${liked && 'clicked'}`}
+          className={`btn material-symbols-outlined ${liked ? 'clicked': ''}`}
           id="like-btn"
           onClick={handleLike}>
           favorite

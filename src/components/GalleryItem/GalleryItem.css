@@ -87,7 +87,6 @@ img:hover ~ .show-desc-text {
 }
 
 .btn:hover {
-  font-variation-settings: 'wght' 400;
   color: black;
 }
 
